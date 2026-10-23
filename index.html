@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d24">
+  <title>Nosso Caminho 💗</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow: hidden;
+      font-family: Georgia, serif;
+      color: #fff0fa;
+      background: linear-gradient(
+        180deg,
+        #080d20 0%,
+        #171832 60%,
+        #382443 100%
+      );
+    }
+
+    #ceu {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .estrela {
+      position: absolute;
+      color: #fff2ce;
+      animation: brilhar 2s infinite alternate;
+    }
+
+    @keyframes brilhar {
+      from { opacity: .2; }
+      to { opacity: 1; }
+    }
+
+    .coracao {
+      position: absolute;
+      bottom: -40px;
+      color: #ffb6d8;
+      animation: subir linear infinite;
+    }
+
+    @keyframes subir {
+      to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+      }
+    }
+
+    .cartao {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 400px;
+      padding: 30px 22px;
+      text-align: center;
+      border: 1px solid #f7c7e866;
+      border-radius: 26px;
+      background: rgba(14, 16, 40, .94);
+      box-shadow: 0 0 45px #d77bc526;
+    }
+
+    .lua {
+      font-size: 48px;
+      margin-bottom: 18px;
+    }
+
+    .subtitulo {
+      color: #d9bce9;
+      font: 11px Arial, sans-serif;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      color: #ffd5eb;
+      font-size: 34px;
+      margin: 18px 0;
+      font-weight: normal;
+    }
+
+    .texto {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #f2e7f4;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ffd3e7, #dba5e2);
+      color: #35172f;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(.96);
+    }
+
+    .rodape {
+      color: #cbb7db;
+      font-size: 12px;
+      margin-top: 22px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="ceu"></div>
+
+  <main class="cartao">
+    <div class="lua">🌙 ✨ 🌷</div>
+
+    <div class="subtitulo">UMA HISTÓRIA DE AMOR</div>
+
+    <h1>Nosso Caminho</h1>
+
+    <p class="texto">
+      Dois corações.<br>
+      Uma história.<br>
+      E um caminho para encontrar o amor. 💗
+    </p>
+
+    <button id="comecar" type="button">
+      Começar nossa história 💌
+    </button>
+
+    <div class="rodape">
+      Feito com carinho, para o meu Richard ♡
+    </div>
+  </main>
+
+  <script>
+    const ceu = document.getElementById("ceu");
+
+    for (let i = 0; i < 65; i++) {
+      const estrela = document.createElement("span");
+
+      estrela.className = "estrela";
+      estrela.textContent = Math.random() > 0.5 ? "✦" : "·";
+      estrela.style.left = Math.random() * 100 + "%";
+      estrela.style.top = Math.random() * 100 + "%";
+      estrela.style.fontSize = (8 + Math.random() * 12) + "px";
+      estrela.style.animationDelay = Math.random() * 3 + "s";
+
+      ceu.appendChild(estrela);
+    }
+
+    for (let i = 0; i < 14; i++) {
+      const coracao = document.createElement("span");
+
+      coracao.className = "coracao";
+      coracao.textContent = ["♡", "♥", "✧", "🌸"][i % 4];
+      coracao.style.left = Math.random() * 100 + "%";
+      coracao.style.animationDelay = Math.random() * 10 + "s";
+      coracao.style.animationDuration = (8 + Math.random() * 8) + "s";
+      coracao.style.fontSize = (13 + Math.random() * 13) + "px";
+
+      ceu.appendChild(coracao);
+    }
+
+    document.getElementById("comecar").addEventListener("click", function() {
+      alert("Nossa história está apenas começando, meu amor! 💗");
+    });
+  </script>
+</body>
+  </html>
+  
